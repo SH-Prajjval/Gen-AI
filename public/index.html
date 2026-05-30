@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Coverforge Studio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="ambient">
+      <div class="orb orb-one"></div>
+      <div class="orb orb-two"></div>
+      <div class="orb orb-three"></div>
+    </div>
+
+    <main class="page">
+      <header class="hero">
+        <p class="eyebrow">GenAI Book Cover Concept Lab</p>
+        <h1>Coverforge Studio</h1>
+        <p class="subtitle">
+          Generate three professional cover concepts, image prompts, and
+          back-cover blurbs in minutes.
+        </p>
+      </header>
+
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <h2>Book Metadata</h2>
+            <p>Fill the form or load a demo preset.</p>
+          </div>
+          <div class="demo-buttons">
+            <button type="button" class="ghost" data-demo="literary">
+              Literary Fiction
+            </button>
+            <button type="button" class="ghost" data-demo="thriller">
+              Thriller
+            </button>
+            <button type="button" class="ghost" data-demo="nonfiction">
+              Non-Fiction
+            </button>
+          </div>
+        </div>
+
+        <form id="book-form">
+          <label>
+            Title
+            <input
+              type="text"
+              name="title"
+              placeholder="Enter the book title"
+              required
+            />
+          </label>
+          <label>
+            Genre
+            <input
+              type="text"
+              name="genre"
+              placeholder="Literary fiction, thriller, history"
+              required
+            />
+          </label>
+          <label>
+            Synopsis
+            <textarea
+              name="synopsis"
+              rows="6"
+              placeholder="Summarize the plot, key themes, and tone."
+              required
+            ></textarea>
+          </label>
+          <label>
+            Target Audience
+            <input
+              type="text"
+              name="audience"
+              placeholder="Fans of immersive, character-driven stories"
+              required
+            />
+          </label>
+
+          <div class="form-actions">
+            <button type="submit" id="generate-btn">Generate Concepts</button>
+            <span class="status" id="form-status"></span>
+          </div>
+          <div class="error" id="form-error" role="alert"></div>
+        </form>
+      </section>
+
+      <section class="results" id="results">
+        <div class="results-header">
+          <h2>Cover Concepts</h2>
+          <p>
+            Each concept includes visual direction, color palette, image prompt,
+            and a 150-word blurb.
+          </p>
+        </div>
+        <div class="warnings" id="warnings"></div>
+        <div class="cards" id="concept-cards"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

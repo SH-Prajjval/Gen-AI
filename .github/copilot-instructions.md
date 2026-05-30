@@ -1,0 +1,12 @@
+- [x] Verify that the copilot-instructions.md file in the .github directory is created. (done)
+- [x] Clarify Project Requirements (requirements confirmed: Express + static UI, Gemini JSON output, demo presets)
+- [x] Scaffold the Project (Express + static frontend scaffolded)
+- [x] Customize the Project (Gemini API, schema, UI, demo presets, rendering)
+- [x] Install Required Extensions (no extensions needed)
+- [x] Compile the Project (dependencies installed with npm)
+- [x] Create and Run Task (no task needed)
+- [x] Launch the Project (server started with npm run dev)
+- [x] Ensure Documentation is Complete (README and instructions updated, comments removed)
+- Work through each checklist item systematically.
+- Keep communication concise and focused.
+- Follow development best practices.
