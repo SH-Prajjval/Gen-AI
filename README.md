@@ -1,6 +1,5 @@
-# Coverforge Studio
-
-Generate three professional book cover concepts, image prompts, and back-cover blurbs from a title, genre, synopsis, and target audience.
+# <h1 align="center">Gen AI Hackathon</h1>
+## AI Cover Prompt and Blurb Generator
 
 ## Requirements
 

@@ -15,12 +15,31 @@
 
     <main class="page">
       <header class="hero">
-        <p class="eyebrow">GenAI Book Cover Concept Lab</p>
-        <h1>Coverforge Studio</h1>
-        <p class="subtitle">
-          Generate three professional cover concepts, image prompts, and
-          back-cover blurbs in minutes.
-        </p>
+        <div class="hero-main">
+          <p class="eyebrow">GenAI Book Cover Concept Lab</p>
+          <h1>Coverforge Studio</h1>
+          <p class="subtitle">
+            Generate three professional cover concepts, image prompts, and
+            back-cover blurbs in minutes.
+          </p>
+          <div class="hero-actions">
+            <span class="pill">3 concepts</span>
+            <span class="pill">Image prompts</span>
+            <span class="pill">150-word blurbs</span>
+          </div>
+        </div>
+        <div class="hero-card">
+          <p class="hero-card-label">What you get</p>
+          <ul class="hero-list">
+            <li>Visual direction + palette</li>
+            <li>DALL-E / SD-ready prompts</li>
+            <li>Back-cover copy in one pass</li>
+          </ul>
+          <p class="hero-note">
+            Built for indie authors and small publishers who want fast, stylish
+            concepting without agency costs.
+          </p>
+        </div>
       </header>
 
       <section class="panel">
@@ -61,7 +80,7 @@
               required
             />
           </label>
-          <label>
+          <label class="full">
             Synopsis
             <textarea
               name="synopsis"
@@ -80,11 +99,11 @@
             />
           </label>
 
-          <div class="form-actions">
+          <div class="form-actions full">
             <button type="submit" id="generate-btn">Generate Concepts</button>
             <span class="status" id="form-status"></span>
           </div>
-          <div class="error" id="form-error" role="alert"></div>
+          <div class="error full" id="form-error" role="alert"></div>
         </form>
       </section>
 

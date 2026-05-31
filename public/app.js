@@ -3,6 +3,9 @@ const statusEl = document.getElementById("form-status");
 const errorEl = document.getElementById("form-error");
 const cardsEl = document.getElementById("concept-cards");
 const warningsEl = document.getElementById("warnings");
+const apiBase = window.location.protocol.startsWith("http")
+  ? window.location.origin
+  : "http://localhost:3002";
 
 const demoPresets = {
   literary: {
@@ -151,7 +154,7 @@ form.addEventListener("submit", async (event) => {
   };
 
   try {
-    const response = await fetch("/api/generate", {
+    const response = await fetch(`${apiBase}/api/generate`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -159,7 +162,16 @@ form.addEventListener("submit", async (event) => {
       body: JSON.stringify(payload),
     });
 
-    const data = await response.json();
+    const rawText = await response.text();
+    let data = {};
+
+    if (rawText) {
+      try {
+        data = JSON.parse(rawText);
+      } catch (parseError) {
+        throw new Error("Server returned a non-JSON response.");
+      }
+    }
 
     if (!response.ok) {
       const details = Array.isArray(data.details)
@@ -167,7 +179,10 @@ form.addEventListener("submit", async (event) => {
         : data.details
           ? ` ${data.details}`
           : "";
-      throw new Error(`${data.error || "Request failed."}${details}`);
+      const fallbackMessage = rawText
+        ? `Request failed: ${rawText}`
+        : `Request failed (${response.status}).`;
+      throw new Error(`${data.error || fallbackMessage}${details}`);
     }
 
     renderWarnings(data.warnings);
